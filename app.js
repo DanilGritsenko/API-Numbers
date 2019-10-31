@@ -31,7 +31,7 @@ document.querySelector(".get-number2").addEventListener("click", fetchNumber);
 function fetchRandomNumber(){
     let result;
     let output = "";
-    fetch(`http://numbersapi.com/random/?json`)
+    fetch(`https://numbersapi.com/random/?json`)
     .then(function(response){
         console.log(response);
         return response.json();
@@ -49,7 +49,7 @@ function fetchNumber(){
     const number = document.querySelector('input[type=number]').value;
     let result;
     let output = "";
-    fetch(`http://numbersapi.com/${number}/?json`)
+    fetch(`https://numbersapi.com/${number}/?json`)
     .then(function(response){
         console.log(response);
         return response.json();
@@ -67,7 +67,7 @@ function getNumber(){
     
     let result;
     let output = "";
-    fetch(`http://numbersapi.com/random/?json`)
+    fetch(`https://numbersapi.com/random/?json`)
     .then(function(response){
         console.log(response);
         return response.json();
