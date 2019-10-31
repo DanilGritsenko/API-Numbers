@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
-    <title>Chuck Norris Jokes</title>
+    <title>Number Facts</title>
 </head>
 <body>
     <div class="container">
-        <h2>Chuck Norris Jokes and Number Facts Generator</h2>
+        <h2>Number Facts Generator</h2>
         <form onsubmit="return false">
             <div>
                 <label for="number"></label>
                 <input type="number" id="number">
             </div>
             <div>
-                <button class="get-jokes">Get Jokes</button>
-                <button class="get-number">Get Number</button>      
+                <!--<button class="get-jokes">Get Jokes</button>-->
+                <button class="get-number">Get a random number fact</button>
+                <button class="get-number2">Get specific number</button>
             </div>
             
 
@@ -25,6 +26,7 @@
 
         <ul class="jokes"></ul>
         <ul class="numbers" id="numbers"></ul>
+        <ul class="numbers2" id="numbers2"></ul>
     </div>
     <script src="app.js"></script>
 </body>

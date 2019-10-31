@@ -1,7 +1,8 @@
-document.querySelector(".get-jokes").addEventListener("click", getJokes);
-document.querySelector(".get-number").addEventListener("click", getNumber);
+//document.querySelector(".get-jokes").addEventListener("click", getJokes);
+document.querySelector(".get-number").addEventListener("click", fetchRandomNumber);
+document.querySelector(".get-number2").addEventListener("click", fetchNumber);
 
-function getJokes(e){
+/*function getJokes(e){
     const number = document.querySelector('input[type=number]').value;
 
     fetch(`https://api.icndb.com/jokes/random/${number}`)
@@ -25,9 +26,9 @@ function getJokes(e){
     
 
     e.preventDefault();
-}
+}*/
 
-function fetchNumber(){
+function fetchRandomNumber(){
     let result;
     let output = "";
     fetch(`http://numbersapi.com/random/?json`)
@@ -36,22 +37,44 @@ function fetchNumber(){
         return response.json();
     })
     .then(function(data){
-    //output = `<li>${data.text}</li>`;
+    output = `<li>${data.text}</li>`;
     result = data.text;
     console.log(result);
+    document.querySelector(".numbers").innerHTML = output;
     return result;
+});
+}
+
+function fetchNumber(){
+    const number = document.querySelector('input[type=number]').value;
+    let result;
+    let output = "";
+    fetch(`http://numbersapi.com/${number}/?json`)
+    .then(function(response){
+        console.log(response);
+        return response.json();
+    })
+    .then(function(data){
+    output = `<li>${data.text}</li>`;
+    result = data.text;
+    console.log(result);
+    document.querySelector(".numbers").innerHTML = output;
 });
 }
 
 
 function getNumber(){
-    const numbera = document.querySelector('input[type=number]').value;
-    console.log("button clicked");
-    let output = fetchNumber();
-    console.log("output = ", output);
-    for(let counter = 0; numbera < counter; counter++){
-        
-        document.querySelector(".numbers").innerHTML = output;
-        output.preventDefault();
-};
+    
+    let result;
+    let output = "";
+    fetch(`http://numbersapi.com/random/?json`)
+    .then(function(response){
+        console.log(response);
+        return response.json();
+    })
+    .then(function(data){
+    output = `<li>${data.text}</li>`;
+    result = data.text;
+    console.log(result);
+});
 }
